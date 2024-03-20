@@ -1,4 +1,4 @@
-const user_input = prompt("Entrez les minutes");
+const user_input = prompt("Enter the minutes");
 let totalMinutes = Number(user_input);
 let hours = Math.floor(totalMinutes / 60);
 let minutes = totalMinutes % 60;
