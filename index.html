@@ -1,18 +1,46 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="">
 <head>
-    <title>Minuteur</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="container">
-        <p>
-             <span id="hours">00 </span> H  <span id="minutes">00 </span>  min <span id="secondes">00 </span> sec 
-        </p>
-    </div>
-    <script src="script.js"></script>
-</body>
+    <header >
+        <div class="container py-5 ">
+            <div class="row">
+                <div class="col"><button class="btn btn-primary">Minuteur</button></div>
+                <div class="col"><button class="btn btn-primary">Paramètres</button></div>
+            </div>
+        </div>
+    </header>
 
+    <main>
+        <div class="container" id="affichagehorloge">
+            <div class="row">
+                <div class="col"><span id="min">25</span>mins</div>
+                <div class="col"><span id="sec">00</span>secs</div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary" id="debuterbtn"><span >Debuter</span></button>
+                    <button class="btn btn-primary" id="pausebtn"><span >pause</span></button>
+                    <button class="btn btn-primary" id="resumerbtn"><span >resumer</span></button>
+                </div>
+                <div class="col"><button class="btn btn-primary" id="resetbtn"><span>Reset</span></button></div>
+            </div>
+        </div>
+        <div class="container" id="affichageparametres">
+            param
+        </div>
+    </main>
+
+    <footer>
+
+        <script src="script.js"></script>
+        <script src="js/bootstrap.bundle.js"></script>
+    </footer>
+</body>
 </html>

@@ -1,27 +1,58 @@
-const user_input = prompt("Enter the minutes");
-let totalMinutes = Number(user_input);
-let hours = Math.floor(totalMinutes / 60);
-let minutes = totalMinutes % 60;
+let minutes = 1;
 let secondes = 0;
+let running = false;
+const debuterbtn = document.getElementById("debuterbtn");
+const pausebtn = document.getElementById("pausebtn");
+const resumerbtn = document.getElementById("resumerbtn");   
+const resetbtn = document.getElementById("resetbtn");
+const min = document.getElementById("min");
+const sec = document.getElementById("sec");
 
+function afficher() {
+    min.innerText = minutes;
+    sec.innerText = secondes;
+}
 
-
-let timer = setInterval(function() {
-    if (secondes == 0 && minutes != 0) {
-        secondes = 59;
+function decrementer() {
+    if (minutes > 0 && secondes == 0) {
         minutes--;
-    } else if (secondes == 0 && minutes == 0 && hours != 0) {
         secondes = 59;
-        minutes = 59;
-        hours--;
-    } else {
+    } else if (secondes > 0) {
         secondes--;
     }
-    document.getElementById('hours').innerText = hours;
-    document.getElementById('minutes').innerText = minutes;
-    document.getElementById('secondes').innerText = secondes;
+    else running = false;
+    afficher();
+}
 
-    if (hours == 0 && minutes == 0 && secondes == 0) {
-        clearInterval(timer);
-    }
-}, 1000);
+let intervalId;
+
+debuterbtn.addEventListener("click", () => {
+    running = true ;
+    debuterbtn.style.display = "none";
+    pausebtn.style.display = "inline-block";
+    intervalId = setInterval(decrementer, 1000);
+})
+
+resumerbtn.addEventListener("click", () => {
+    resumerbtn.style.display = "none";
+    pausebtn.style.display = "inline-block";
+    intervalId = setInterval(decrementer, 1000);
+
+})
+
+pausebtn.addEventListener("click", () => {
+    pausebtn.style.display = "none";
+    resumerbtn.style.display = "inline-block";
+    clearInterval(intervalId);
+})
+
+resetbtn.addEventListener("click", () => {
+    resumerbtn.style.display = "none";
+    debuterbtn.style.display = "inline-block" ;
+    minutes = 25;
+    secondes = 0;
+    afficher();
+    clearInterval(intervalId);
+    debuterbtn.style.display = "inline-block";
+    pausebtn.style.display = "none";
+})
