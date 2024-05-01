@@ -1,46 +1,47 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header >
-        <div class="container py-5 ">
-            <div class="row">
-                <div class="col"><button class="btn btn-primary">Minuteur</button></div>
-                <div class="col"><button class="btn btn-primary">Paramètres</button></div>
-            </div>
+    <header>
+        <div class="container d-flex justify-content-center">
+            <h1>Focus Session</h1>
         </div>
     </header>
-
     <main>
-        <div class="container" id="affichagehorloge">
-            <div class="row">
-                <div class="col"><span id="min">25</span>mins</div>
-                <div class="col"><span id="sec">00</span>secs</div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-primary" id="debuterbtn"><span >Debuter</span></button>
-                    <button class="btn btn-primary" id="pausebtn"><span >pause</span></button>
-                    <button class="btn btn-primary" id="resumerbtn"><span >resumer</span></button>
+        <section id="minutor">
+            <div class="container ">
+                <div class="row">
+                    <div class="col bg-light py-5 ">
+                        <div class="row d-flex justify-content-center gx-0" >
+                            <div class="col-3 py-5  offset-1"><span class="fw-bold fs-4">0</span></div>
+                            <div class="col-3 py-5  offset-1"><span class="fw-bold fs-4">5</span></div>
+                            <div class="col-3 py-5  offset-1"><span class="fw-bold fs-4">.min</span></div>
+                        </div>
+                        <div class="row d-flex justify-content-center  gx-0" >
+                            <div class="col-3 py-5  offset-1"><span class="fw-bold fs-4">0</span></div>
+                            <div class="col-3 py-5  offset-1"><span class="fw-bold fs-4">3</span></div>
+                            <div class="col-3 py-5  offset-1"><span class="fw-bold fs-4">.sec</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col"><button class="btn btn-primary" id="resetbtn"><span>Reset</span></button></div>
+                <div class="row mt-5">
+                    <div class="btn-group" role="group" >
+                        <button type="button" class="btn btn-outline-primary" id="startbtn">Start</button>
+                        <button type="button" class="btn btn-outline-primary" id="pausebtn">Pause</button>
+                        <button type="button" class="btn btn-outline-primary d-none" id="resumebtn">Resume</button>
+                        <button type="button" class="btn btn-outline-primary" id="resetbtn">Reset</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="container" id="affichageparametres">
-            param
-        </div>
+        </section>
     </main>
-
     <footer>
 
-        <script src="script.js"></script>
-        <script src="js/bootstrap.bundle.js"></script>
     </footer>
 </body>
 </html>
